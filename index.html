@@ -108,9 +108,9 @@
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
                   unityInstance.SetFullscreen(1);
-                  alert("FullScreen");
+                  
                 fullscreenButton.onclick = () => {
-				//unityInstance.SendMessage("ScaleBackgroundToScreen", "FitBackgroundToCamera","JavaScript");
+				unityInstance.SendMessage("ScaleBackgroundToScreen", "FitBackgroundToCamera","JavaScript");
                   unityInstance.SetFullscreen(1);
                 };
               }).catch((message) => {
