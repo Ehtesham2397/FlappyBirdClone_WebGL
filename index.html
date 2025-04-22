@@ -109,9 +109,7 @@
                 loadingBar.style.display = "none";
                   fullscreenButton.onclick = () => {
                       setTimeout(() => {
-
                           unityInstance.SendMessage("ScaleBackgroundToScreen", "FitBackgroundToCamera", "JavaScript");
-
                       }, 100); // small delay to ensure Unity is ready
                       unityInstance.SetFullscreen(1);
                   unityInstance.SetFullscreen(1);
