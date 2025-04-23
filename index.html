@@ -106,7 +106,10 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
-                loadingBar.style.display = "none";
+                  loadingBar.style.display = "none";
+                  setTimeout(() => {
+                      unityInstance.SendMessage("ScaleBackgroundToScreen", "FitBackgroundToCamera", "JavaScript");
+                  }, 100);
                   fullscreenButton.onclick = () => {
                       setTimeout(() => {
                           unityInstance.SendMessage("ScaleBackgroundToScreen", "FitBackgroundToCamera", "JavaScript");
