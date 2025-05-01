@@ -57,11 +57,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/FlappyBirdClone_WebGL.loader.js";
+      var loaderUrl = buildUrl + "/LocalFlappyBirdBuild.loader.js";
       var config = {
-        dataUrl: buildUrl + "/FlappyBirdClone_WebGL.data",
-        frameworkUrl: buildUrl + "/FlappyBirdClone_WebGL.framework.js",
-        codeUrl: buildUrl + "/FlappyBirdClone_WebGL.wasm",
+        dataUrl: buildUrl + "/LocalFlappyBirdBuild.data",
+        frameworkUrl: buildUrl + "/LocalFlappyBirdBuild.framework.js",
+        codeUrl: buildUrl + "/LocalFlappyBirdBuild.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "GameBoom",
         productName: "FlappyBird",
@@ -106,14 +106,8 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
-                  loadingBar.style.display = "none";
-                  setTimeout(() => {
-                      unityInstance.SendMessage("ScaleBackgroundToScreen", "FitBackgroundToCamera", "JavaScript");
-                  }, 100);
-                  fullscreenButton.onclick = () => {
-                      setTimeout(() => {
-                          unityInstance.SendMessage("ScaleBackgroundToScreen", "FitBackgroundToCamera", "JavaScript");
-                      }, 100); // small delay to ensure Unity is ready
+                loadingBar.style.display = "none";
+                fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };
               }).catch((message) => {
