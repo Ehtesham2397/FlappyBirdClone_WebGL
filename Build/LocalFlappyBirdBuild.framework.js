@@ -1976,13 +1976,13 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  5863228: function() {Module['emscripten_get_now_backup'] = performance.now;},  
- 5863283: function($0) {performance.now = function() { return $0; };},  
- 5863331: function($0) {performance.now = function() { return $0; };},  
- 5863379: function() {performance.now = Module['emscripten_get_now_backup'];},  
- 5863434: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
- 5863495: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
- 5863559: function() {return Module.webglContextAttributes.powerPreference;}
+  5862956: function() {Module['emscripten_get_now_backup'] = performance.now;},  
+ 5863011: function($0) {performance.now = function() { return $0; };},  
+ 5863059: function($0) {performance.now = function() { return $0; };},  
+ 5863107: function() {performance.now = Module['emscripten_get_now_backup'];},  
+ 5863162: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
+ 5863223: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
+ 5863287: function() {return Module.webglContextAttributes.powerPreference;}
 };
 
 
@@ -12241,7 +12241,7 @@ var ASM_CONSTS = {
       // full 4GB Wasm memories, the size will wrap back to 0 bytes in Wasm side
       // for any code that deals with heap sizes, which would require special
       // casing all heap size related code to treat 0 specially.
-      return 2147483648;
+      return 1073741824;
     }
 
 
